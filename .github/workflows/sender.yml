@@ -20,11 +20,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Repository Dispatch
-      uses: peter-evans/repository-dispatch@v1.1.1
+    - name: Dispatch Action
+      uses: mvasigh/dispatch-action@1.1.6
       with:
          # A repo scoped GitHub Personal Access Token
-         token:  PERSONAL_ACCESS_TOKEN
+         token:  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
          # The full name of the repository to send the dispatch.
          repository: Purple-CSGO/Action-Reciever
          # A custom webhook event name.
