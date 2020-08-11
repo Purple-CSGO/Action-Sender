@@ -22,10 +22,14 @@ jobs:
 
     - name: Dispatch Action
       uses: mvasigh/dispatch-action@1.1.6
-      with:
-         # A repo scoped GitHub Personal Access Token
-         token:  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-         # The full name of the repository to send the dispatch.
-         repository: Purple-CSGO/Action-Reciever
-         # A custom webhook event name.
-         event_type: hlae_update_again
+      with:    # The Github access token to use (i.e. secrets.GITHUB_TOKEN)
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        # The name of the repository to dispatch the event to
+        repo: Action-Reciever
+        # The owner of the repository to dispatch the event to
+        owner: Purple-CSGO
+        # The type of event to be dispatched
+        event_type: hlae_update_again
+        # An optional JSON string payload to be dispatched
+        #message: # optional
+
