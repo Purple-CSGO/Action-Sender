@@ -20,14 +20,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Dispatch Action
-      uses: mvasigh/dispatch-action@1.1.6
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1.1.1
       with:
-         # The Github access token to use (i.e. secrets.GITHUB_TOKEN)
-         token: PERSONAL_ACCESS_TOKEN
-         # The name of the repository to dispatch the event to
-         repo: Action-Reciever
-         # The owner of the repository to dispatch the event to
-         owner: Purple-CSGO
-         # The type of event to be dispatched
+         # A repo scoped GitHub Personal Access Token
+         token:  PERSONAL_ACCESS_TOKEN
+         # The full name of the repository to send the dispatch.
+         repository: Purple-CSGO/Action-Reciever
+         # A custom webhook event name.
          event_type: hlae_update_again
